@@ -46,7 +46,7 @@ public class CoverArtArchiveClient extends BaseClient {
 										
 			albumCover = gson.fromJson(response.getBody(), AlbumCover.class);			
 		} catch (HttpStatusCodeException e) {			
-			log.error("Error for url " + url);
+			log.info("Info: url has not result " + url);			
 		}
 						
 		return albumCover;

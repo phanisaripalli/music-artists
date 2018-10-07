@@ -42,7 +42,7 @@ public class DiscogsClient {
 			Gson gson = new Gson();
 			artistDescription = gson.fromJson(response.getBody(), Profile.class);			
 		} catch (HttpStatusCodeException e) {			
-			log.error("Error for url " + url);
+			log.info("Info: url has not result " + url);
 		}
 						
 		return artistDescription;
