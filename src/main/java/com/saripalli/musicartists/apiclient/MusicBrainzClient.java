@@ -33,6 +33,7 @@ public class MusicBrainzClient extends BaseClient {
 	 * @return a BaseModel object. If the processing is successful the result contains
 	 * 	an artist object. 
 	 */
+	@SuppressWarnings("removal")
 	public BaseModel getMusicBrainzdata(String mbid) {				
 		
 	    RestTemplate restTemplate = new RestTemplate();
@@ -56,7 +57,7 @@ public class MusicBrainzClient extends BaseClient {
 			result = nodeFoundModel;
 		} catch (Exception e) {			
 			ErrorModel erroModel = new ErrorModel();			
-			result = erroModel;
+			result = erroModel;			
 		}
 						
 		return result;

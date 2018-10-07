@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import java.lang.reflect.Type;
@@ -22,10 +23,23 @@ public class ArtistDeserializer implements JsonDeserializer<Artist> {
 		
 		Artist artist = new Artist();
 		
+		String gender = null;
+		String artistType = null;
+		String disambiguation = null;
+		
 		String name = node.get("name").getAsString();
-		String gender = node.get("gender").getAsString();
-		String artistType = node.get("type").getAsString();
-		String disambiguation = node.get("disambiguation").getAsString();		
+		
+		if (!(node.get("gender") instanceof JsonNull)) {			
+			gender = node.get("gender").getAsString();
+		}
+		
+		if (!(node.get("type") instanceof JsonNull)) {
+			artistType = node.get("type").getAsString();
+		}
+		
+		if (!(node.get("disambiguation") instanceof JsonNull)) {
+			disambiguation = node.get("disambiguation").getAsString();
+		}		
 		
 		artist.setName(name);
 		artist.setGender(gender);

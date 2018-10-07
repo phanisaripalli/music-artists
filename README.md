@@ -88,3 +88,8 @@ mvn spring-boot:run
  - Coverart may not give not give results and cached result will suffer from this
  - I wanted to use caching system like Redis that can be scaled.
  
+## Examples
+
+- 83d91898-7763-47d7-b03b-b92132375c47
+- e0bba708-bdd3-478d-84ea-c706413bedab
+- f27ec8db-af05-4f36-916e-3d57f91ecf5e
